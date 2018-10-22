@@ -1,14 +1,22 @@
 [hr]
-[center][color=red][size=16pt][b]LAST POST ON EACH PAGE v1.0[/b][/size][/color]
+[center][color=red][size=16pt][b]LAST POST FROM PREVIOUS PAGE v1.1[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4102]Link to Mod[/url]
 [/center]
 [hr]
 
 [color=blue][b][size=12pt][u]Introduction[/u][/size][/b][/color]
-This mod makes changes to the forum so that the last post from the previous page in that thread is displayed as the first post on the next page.  So if the forum only shows 10 posts per page, then the first page has 10 posts (posts 1 thru 10), the second and above will have 11 (posts 10 thru 20, 20 thru 30, etc)....
+This mod makes changes to the forum so that the last post from the previous page in that thread is displayed as the first post on the next page.  So if the forum only shows 10 posts per page, then page 1 has 10 posts (posts 1 thru 10), the page 2 and above will have 11 (posts 10 thru 20, 20 thru 30, etc)....
 
 [color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
-There are no admin settings for this mod.  You must uninstall this mod to undo the effects of this mod.
+There are 5 new settings under [b]Admin[/b] -> [b]Configuration[/b] -> [b]Modification Settings[/b].  They are:
+o Show last post from previous page
+o Dim last post from previous page by
+o Undim the post by hovering the cursor over it?
+o Remove images in last post from previous page?
+o Remove functionality from last post from previous page?
+
+[color=blue][b][size=12pt][u]Related Discussion[/u][/size][/b][/color]
+o [url=http://www.simplemachines.org/community/index.php?topic=544738.0]Last post on each page[/url]
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
 This mod was tested on SMF 2.0.11, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  

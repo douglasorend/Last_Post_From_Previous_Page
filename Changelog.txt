@@ -1,2 +1,11 @@
+v1.1 - March 30th, 2016
+o Added French UTF8 translation by [url=http://www.simplemachines.org/community/index.php?action=profile;u=333196]TourFL[/url]!
+o Added option to enable last post from previous page mod.
+o Added option to dim the last post from previous page by specified percentage.
+o Added option to allow undimming while hovering over the last post from previous page.
+o Added option to remove the actions available per post.
+o Added option to remove pictures from the last post on the previous page.
+o Changed header in first post on page to read "Reply #[n] from previous page".
+
 v1.0 - March 28th, 2016
 o Initial release to the public

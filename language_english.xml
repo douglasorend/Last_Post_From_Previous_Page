@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:PostPrevPage</id>
+<name>Last Post From Previous Page</name>
+<version>1.1</version>
+
+<file name="$languagedir/index.english.php">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['post_from_previous_page'] = ' from previous page';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/ManageSettings.english.php">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['LPOEP_show_last_post'] = 'Show last post from previous page?';
+$txt['LPOEP_dim_css'] = 'Dim last post from previous page by:<div class="smalltext">Use <strong>0</strong> to disable this setting.</div>';
+$txt['LPOEP_undim_hover'] = 'Undim the post by hovering the cursor over it?';
+$txt['LPOEP_remove_images'] = 'Remove images in last post from previous page?';
+$txt['LPOEP_remove_function'] = 'Remove functionality from last post from previous page?<div class="smalltext">Examples include quoting, replying, removing, etc</div>';
+]]></add>
+	</operation>
+</file>
+</modification>

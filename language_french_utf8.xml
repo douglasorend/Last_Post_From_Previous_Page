@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:PostPrevPage</id>
+<name>Last Post From Previous Page</name>
+<version>1.1</version>
+
+<file name="$languagedir/index.french-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['post_from_previous_page'] = ' de la page pr&eacute;c&eacute;dente';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/ManageSettings.french-utf8.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['LPOEP_show_last_post'] = ' R&eacute;p&eacute;ter le dernier message de la page pr&eacute;c&eacute;dente en d&eacute;but de page?';
+$txt['LPOEP_dim_css'] = 'Att&eacute;nuer le message r&eacute;p&eacute;t&eacute; de:<div class="smalltext"><strong>0</strong> pour d&eacute;sactiver.</div>';
+$txt['LPOEP_undim_hover'] = 'D&eacute;satt&eacute;nuer en placant le curseur sur le message  r&eacute;p&eacute;t&eacute;?';
+$txt['LPOEP_remove_images'] = 'Cacher les images du message  r&eacute;p&eacute;t&eacute;?';
+$txt['LPOEP_remove_function'] = 'Enlever les boutons de controle du message r&eacute;p&eacute;t&eacute;?<div class="smalltext">Citations, modification, suppression, etc</div>';
+]]></add>
+	</operation>
+</file>
+</modification>

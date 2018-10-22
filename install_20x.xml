@@ -1,23 +1,103 @@
 <?xml version="1.0"?>
 <!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
-<id>Dougiefresh:LastPost</id>
-<name>Last Post On Each Page</name>
-<version>1.0</version>
+<id>Dougiefresh:PostPrevPage</id>
+<name>Last Post From Previous Page</name>
+<version>1.1</version>
 
+<!-------------------------------------------------------------------------->
+<!-- Source modifications                                                 -->
+<!-------------------------------------------------------------------------->
 <file name="$sourcedir/Display.php">
+	<!-- Display function -->
 	<operation>
 		<search position="after"><![CDATA[if ($start >= $context['total_visible_posts'] / 2 && $context['messages_per_page'] != -1)]]></search>
-		<add><![CDATA[if ($start > 0)
+		<add><![CDATA[if ($start > 0 && !empty($modSettings['LPOEP_show_last_post']))
 	{
 		$start--;
 		$limit++;
+		$context['LPOEP_Last_Post'] = 0;
 	}
 	]]></add>
 	</operation>
 	<operation>
+		<search position="before"><![CDATA[$posters = array_unique($all_posters);]]></search>
+		<add><![CDATA[
+
+	// If we are processing any page other than the first page, set some things up:
+	if (isset($context['LPOEP_Last_Post']))
+	{
+		$context['LPOEP_Last_Post'] = min($messages);
+		$css_dim = (int) !empty($modSettings['LPOEP_dim_css']) ? $modSettings['LPOEP_dim_css'] : 0;
+		$css_dim = ($css_dim < 0 ? 0 : ($css_dim > 100 ? 100 : $css_dim));
+		if (!empty($css_dim))
+			$context['html_headers'] .= '
+	<style>
+		#msg' . $context['LPOEP_Last_Post'] . ' {
+			opacity: ' . ($css_dim / 100) . ';
+			filter: alpha(opacity=' . $css_dim . ');
+		}' . (!empty($modSettings['LPOEP_undim_hover']) ? '
+		#msg' . $context['LPOEP_Last_Post'] . ':hover {
+			opacity: 1.0;
+			filter: alpha(opacity=100);
+		}' : '') . '
+	</style>';
+	}]]></add>
+	</operation>
+
+	<!-- prepareDisplayContext function -->
+	<operation>
 		<search position="replace"><![CDATA[$counter = empty($options['view_newest_first']) ? $context['start'] : $context['total_visible_posts'] - $context['start'];]]></search>
-		<add><![CDATA[$counter = max(0, (empty($options['view_newest_first']) ? $context['start'] : $context['total_visible_posts'] - $context['start']) - 1);]]></add>
+		<add><![CDATA[$counter = max(0, (empty($options['view_newest_first']) ? $context['start'] : $context['total_visible_posts'] - $context['start']) - !empty($modSettings['LPOEP_show_last_post']));]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA[// Do the censor thang.]]></search>
+		<add><![CDATA[// If desired, strip out any images attached to the last post from the previous page:
+	if (!empty($modSettings['LPOEP_remove_images']) && !empty($context['LPOEP_Last_Post']) && $message['id_msg'] == $context['LPOEP_Last_Post'])
+		$message['body'] = preg_replace("#\[img(|.+?)\](.*)\[\/img\]#i", "[url]$2[/url]", $message['body']);
+
+	]]></add>
+	</operation>
+</file>
+<file name="$sourcedir/ManageSettings.php">
+	<operation>
+		<search position="before"><![CDATA[// Mod authors, add any settings UNDER this line. Include a comma at the end of the line and don't remove this statement!!]]></search>
+		<add><![CDATA[
+		array('check', 'LPOEP_show_last_post'),
+		array('int', 'LPOEP_dim_css'),
+		array('check', 'LPOEP_undim_hover'),
+		array('check', 'LPOEP_remove_images'),
+		array('check', 'LPOEP_remove_function'),]]></add>
+	</operation>
+</file>
+
+<!-------------------------------------------------------------------------->
+<!-- Template modifications                                               -->
+<!-------------------------------------------------------------------------->
+<file name="$themedir/Display.template.php">
+	<!-- template_main function -->
+	<operation>
+		<search position="replace"><![CDATA[<div class="', $message['approved'] ? ($message['alternate'] == 0 ? 'windowbg' : 'windowbg2') : 'approvebg', '">]]></search>
+		<add><![CDATA[<div id="msg', $message['id'], '" class="', $message['approved'] ? ($message['alternate'] == 0 ? 'windowbg' : 'windowbg2') : 'approvebg', '">]]></add>
+	</operation>
+	<operation>
+		<search position="replace"><![CDATA[' ', $txt['on'], ':</strong> ', $message['time'], ' &#187;</div>]]></search>
+		<add><![CDATA[' ', !empty($context['LPOEP_Last_Post']) && $context['LPOEP_Last_Post'] == $message['id'] ? $txt['post_from_previous_page'] : $txt['on'], ':</strong> ', $message['time'], ' &#187;</div>]]></add>
+	</operation>
+	<operation>
+		<search position="before"><![CDATA[// If this is the first post, (#0) just say when it was posted - otherwise give the reply #.]]></search>
+		<add><![CDATA[
+	if (empty($context['LPOEP_Last_Post']) || (!empty($context['LPOEP_Last_Post']) && (empty($modSettings['LPOEP_remove_function']) || $context['LPOEP_Last_Post'] != $message['id'])))
+	{]]></add>
+	</operation>
+	<operation>
+		<search position="after"><![CDATA[
+		echo '
+							</div>';
+
+		// Ignoring this user? Hide the post.]]></search>
+		<add><![CDATA[	}
+]]></add>
 	</operation>
 </file>
 </modification>
