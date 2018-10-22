@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:LastPost</id>
+<name>Last Post On Each Page</name>
+<version>1.0</version>
+
+<file name="$sourcedir/Display.php">
+	<operation>
+		<search position="after"><![CDATA[if ($start >= $context['total_visible_posts'] / 2 && $context['messages_per_page'] != -1)]]></search>
+		<add><![CDATA[if ($start > 0)
+	{
+		$start--;
+		$limit++;
+	}
+	]]></add>
+	</operation>
+	<operation>
+		<search position="replace"><![CDATA[$counter = empty($options['view_newest_first']) ? $context['start'] : $context['total_visible_posts'] - $context['start'];]]></search>
+		<add><![CDATA[$counter = max(0, (empty($options['view_newest_first']) ? $context['start'] : $context['total_visible_posts'] - $context['start']) - 1);]]></add>
+	</operation>
+</file>
+</modification>
