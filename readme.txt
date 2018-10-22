@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]LAST POST FROM PREVIOUS PAGE v1.3[/b][/size][/color]
+[center][color=red][size=16pt][b]LAST POST FROM PREVIOUS PAGE v1.4[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4102]Link to Mod[/url]
 [/center]
 [hr]
@@ -18,6 +18,11 @@ o Remove functionality from last post from previous page?
 [color=blue][b][size=12pt][u]Related Discussions[/u][/size][/b][/color]
 o [url=http://www.simplemachines.org/community/index.php?topic=493110.0]Last post on each page[/url] (Original Request)
 o [url=http://www.simplemachines.org/community/index.php?topic=544738.0]Last post on each page[/url] (Split Topic)
+
+[color=blue][b][size=12pt][u]Translations Courtsey of:[/u][/size][/b][/color]
+o French UTF8 translation by [url=http://www.simplemachines.org/community/index.php?action=profile;u=333196]TourFL[/url]
+o Portuguese Brazilian translations by [url=http://www.simplemachines.org/community/index.php?action=profile;u=341618]DSystem[/url]
+o Spanish Latin translations by [url=http://www.simplemachines.org/community/index.php?action=profile;u=322597]Rock Lee [BC][/url]
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
 This mod was tested on SMF 2.0.11 and SMF 2.1 Beta 2, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  

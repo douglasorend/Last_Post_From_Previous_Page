@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:PostPrevPage</id>
+<name>Last Post From Previous Page</name>
+<version>1.4</version>
+
+<file name="$languagedir/index.portuguese_brazilian.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['post_from_previous_page'] = ' da página anterior';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/ManageSettings.portuguese_brazilian.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['LPOEP_show_last_post'] = 'Mostrar último post da página anterior?';
+$txt['LPOEP_dim_css'] = 'Escurecer último post da página anterior por:<div class="smalltext">Use <strong>0</strong> desativar essa configuração.</div>';
+$txt['LPOEP_undim_hover'] = 'Clarear quando passar o cursor sobre ele?';
+$txt['LPOEP_remove_images'] = 'Remover imagens em último post da página anterior?';
+$txt['LPOEP_remove_function'] = 'Remover a funcionalidade do último post da página anterior?<div class="smalltext">Exemplos incluem citando, respondendo, remoção, etc</div>';
+]]></add>
+	</operation>
+</file>
+</modification>

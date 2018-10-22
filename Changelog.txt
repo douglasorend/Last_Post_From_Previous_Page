@@ -1,3 +1,8 @@
+v1.4 - April 1st, 2016
+o Fixed post sorting issue with "Show most recent posts at the top" option checked.
+o Added Portuguese Brazilian translations by [url=http://www.simplemachines.org/community/index.php?action=profile;u=341618]DSystem[/url].
+o Added Spanish Latin translations by [url=http://www.simplemachines.org/community/index.php?action=profile;u=322597]Rock Lee [BC][/url].
+
 v1.3 - April 1st, 2016
 o Fixed remove picture code to properly change multiple IMG tags to URL tags.
 

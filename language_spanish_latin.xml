@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>Dougiefresh:PostPrevPage</id>
+<name>Last Post From Previous Page</name>
+<version>1.4</version>
+
+<file name="$languagedir/index.spanish_latin.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['post_from_previous_page'] = 'de la p&aacute;gina anterior';
+]]></add>
+	</operation>
+</file>
+<file name="$languagedir/ManageSettings.spanish_latin.php" error="skip">
+	<operation>
+		<search position="end" />
+		<add><![CDATA[
+$txt['LPOEP_show_last_post'] = '¿Mostrar &uacute;ltimo mensaje de la p&aacute;gina anterior?';
+$txt['LPOEP_dim_css'] = 'Oscurecer &uacuteltimo mensaje de la p&aacute;gina anterior por:<div class="smalltext">Use <strong>0</strong> para deshabilitar esta opci&oacute;n.</div>';
+$txt['LPOEP_undim_hover'] = '¿Aclarar el tema, con solo pasar el cursor sobre &eacute;l?';
+$txt['LPOEP_remove_images'] = '¿Eliminar im&aacute;genes en el tema anterior de la p&aacute;gina anterior?';
+$txt['LPOEP_remove_function'] = '¿Retirar la funcionalidad del &uacuteltimo mensaje de la p&aacute;gina anterior?<div class="smalltext">Los ejemplos incluyen citar, respuesta, borrado, etc.</div>';
+]]></add>
+	</operation>
+</file>
+</modification>
