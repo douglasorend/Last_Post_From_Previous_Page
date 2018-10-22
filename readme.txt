@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]LAST POST FROM PREVIOUS PAGE v1.5[/b][/size][/color]
+[center][color=red][size=16pt][b]LAST POST FROM PREVIOUS PAGE v1.6[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4102]Link to Mod[/url]
 [/center]
 [hr]
@@ -28,7 +28,7 @@ o Spanish Latin translations by [url=http://www.simplemachines.org/community/ind
 This mod was tested on SMF 2.0.11 and SMF 2.1 Beta 2, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  
 
 [color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
-The changelog has been removed and can be seen at [url=http://www.xptsp.com/board/index.php?topic=673.msg999#msg999]XPtsp.com[/url].
+The changelog can be viewed at [url=http://www.xptsp.com/board/free-modifications/last-post-from-previous-page/?tab=1]XPtsp.com[/url].
 
 [color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
 Copyright (c) 2016, Douglas Orend
