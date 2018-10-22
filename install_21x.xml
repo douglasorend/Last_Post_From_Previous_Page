@@ -79,62 +79,30 @@
 </file>
 
 <!-------------------------------------------------------------------------->
-<!-- Curve Template modifications                                         -->
-<!-------------------------------------------------------------------------->
-<file name="$boarddir/Themes/core/Display.template.php" error="skip">
-	<!-- template_main function -->
-	<operation>
-		<search position="replace"><![CDATA[<div class="clearfix ', !$is_first_post ? 'topborder ' : '', $message['approved'] ? ($message['alternate'] == 0 ? 'windowbg' : 'windowbg2') : 'approvebg', ' largepadding">';]]></search>
-		<add><![CDATA[<div id="msg', $message['id'], '" class="clearfix ', !$is_first_post ? 'topborder ' : '', $message['approved'] ? ($message['alternate'] == 0 ? 'windowbg' : 'windowbg2') : 'approvebg', ' largepadding">';]]></add>
-	</operation>
-	<operation>
-		<search position="replace"><![CDATA[' ', $txt['on'], ':</strong> ', $message['time'], ' &#187;</div>]]></search>
-		<add><![CDATA[' ', !empty($context['LPOEP_Last_Post']) && $context['LPOEP_Last_Post'] == $message['id'] ? $txt['post_from_previous_page'] : $txt['on'], ':</strong> ', $message['time'], ' &#187;</div>]]></add>
-	</operation>
-	<operation>
-		<search position="before"><![CDATA[// If this is the first post, (#0) just say when it was posted - otherwise give the reply #.]]></search>
-		<add><![CDATA[
-	if (empty($context['LPOEP_Last_Post']) || (!empty($context['LPOEP_Last_Post']) && (empty($modSettings['LPOEP_remove_function']) || $context['LPOEP_Last_Post'] != $message['id'])))
-	{]]></add>
-	</operation>
-	<operation>
-		<search position="after"><![CDATA[
-		echo '
-					</div>';
-
-		// Ignoring this user? Hide the post.]]></search>
-		<add><![CDATA[	}
-]]></add>
-	</operation>
-</file>
-
-<!-------------------------------------------------------------------------->
-<!-- Core Template modifications                                          -->
+<!-- Template modifications                                               -->
 <!-------------------------------------------------------------------------->
 <file name="$themedir/Display.template.php">
 	<!-- template_main function -->
 	<operation>
-		<search position="replace"><![CDATA[<div class="', $message['approved'] ? ($message['alternate'] == 0 ? 'windowbg' : 'windowbg2') : 'approvebg', '">]]></search>
-		<add><![CDATA[<div id="msg', $message['id'], '" class="', $message['approved'] ? ($message['alternate'] == 0 ? 'windowbg' : 'windowbg2') : 'approvebg', '">]]></add>
+		<search position="replace"><![CDATA[<div class="', $message['css_class'] ,'">', $message['id'] != $context['first_message'] ? ']]></search>
+		<add><![CDATA[<div id="msg', $message['id'], '" class="', $message['css_class'] ,'">', $message['id'] != $context['first_message'] ? ']]></add>
 	</operation>
 	<operation>
-		<search position="replace"><![CDATA[' ', $txt['on'], ':</strong> ', $message['time'], ' &#187;</div>]]></search>
-		<add><![CDATA[' ', !empty($context['LPOEP_Last_Post']) && $context['LPOEP_Last_Post'] == $message['id'] ? $txt['post_from_previous_page'] : $txt['on'], ':</strong> ', $message['time'], ' &#187;</div>]]></add>
+		<search position="replace"><![CDATA[', !empty($message['counter']) ? ' #' . $message['counter'] : '', ' ', ']]></search>
+		<add><![CDATA[', !empty($message['counter']) ? ' #' . $message['counter'] : '', !empty($context['LPOEP_Last_Post']) && $context['LPOEP_Last_Post'] == $message['id'] ? $txt['post_from_previous_page'] : '', ' ', ']]></add>
 	</operation>
 	<operation>
-		<search position="before"><![CDATA[// If this is the first post, (#0) just say when it was posted - otherwise give the reply #.]]></search>
+		<search position="before"><![CDATA[// Show the quickbuttons, for various operations on posts.]]></search>
 		<add><![CDATA[
-	if (empty($context['LPOEP_Last_Post']) || (!empty($context['LPOEP_Last_Post']) && (empty($modSettings['LPOEP_remove_function']) || $context['LPOEP_Last_Post'] != $message['id'])))
-	{]]></add>
+if (empty($context['LPOEP_Last_Post']) || (!empty($context['LPOEP_Last_Post']) && (empty($modSettings['LPOEP_remove_function']) || $context['LPOEP_Last_Post'] != $message['id'])))
+{]]></add>
 	</operation>
 	<operation>
-		<search position="after"><![CDATA[
-		echo '
-							</div>';
-
-		// Ignoring this user? Hide the post.]]></search>
-		<add><![CDATA[	}
-]]></add>
+		<search position="after"><![CDATA[echo '
+								</ul>';
+	}]]></search>
+		<add><![CDATA[
+}]]></add>
 	</operation>
 </file>
 </modification>

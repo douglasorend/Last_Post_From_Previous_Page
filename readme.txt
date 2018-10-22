@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]LAST POST FROM PREVIOUS PAGE v1.1[/b][/size][/color]
+[center][color=red][size=16pt][b]LAST POST FROM PREVIOUS PAGE v1.2[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=4102]Link to Mod[/url]
 [/center]
 [hr]
@@ -16,7 +16,8 @@ o Remove images in last post from previous page?
 o Remove functionality from last post from previous page?
 
 [color=blue][b][size=12pt][u]Related Discussion[/u][/size][/b][/color]
-o [url=http://www.simplemachines.org/community/index.php?topic=544738.0]Last post on each page[/url]
+o [url=http://www.simplemachines.org/community/index.php?topic=493110.0]Last post on each page[/url] (Original Request)
+o [url=http://www.simplemachines.org/community/index.php?topic=544738.0]Last post on each page[/url] (Split Topic)
 
 [color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
 This mod was tested on SMF 2.0.11, but should work on SMF 2.0 and up.  SMF 1.x is not and will not be supported.  

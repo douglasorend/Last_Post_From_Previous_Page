@@ -1,3 +1,8 @@
+v1.2 - March 31th, 2016
+o Added support for SMF 2.0.x's Core template.
+o Added support for SMF 2.1 Beta 2.
+o Changed remove picture code to create numbered URL links instead of changing image [b]IMG[/b]s into [b]URL[/b]s.
+
 v1.1 - March 30th, 2016
 o Added French UTF8 translation by [url=http://www.simplemachines.org/community/index.php?action=profile;u=333196]TourFL[/url]!
 o Added option to enable last post from previous page mod.
