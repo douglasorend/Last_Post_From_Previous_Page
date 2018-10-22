@@ -3,7 +3,7 @@
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
 <id>Dougiefresh:PostPrevPage</id>
 <name>Last Post From Previous Page</name>
-<version>1.4</version>
+<version>1.5</version>
 
 <file name="$languagedir/index.portuguese_brazilian.php" error="skip">
 	<operation>

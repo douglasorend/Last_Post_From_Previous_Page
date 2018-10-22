@@ -5,7 +5,7 @@
 	<id>Dougiefresh:PostPrevPage</id>
 	<name>Last Post From Previous Page</name>
 	<type>modification</type>
-	<version>1.4</version>
+	<version>1.5</version>
 
 	<install for="2.0 - 2.0.99">
 		<readme parsebbc="true">readme.txt</readme>
@@ -27,7 +27,7 @@
 		<modification reverse="true">language_spanish_latin-utf8.xml</modification>
 	</uninstall>
 
-	<install for="2.1 Beta 2">
+	<install for="2.1 Beta 3">
 		<readme parsebbc="true">readme.txt</readme>
 		<modification>install_21x.xml</modification>
 		<modification>language_english.xml</modification>
@@ -37,7 +37,7 @@
 		<modification>language_spanish_latin.xml</modification>
 		<modification>language_spanish_latin-utf8.xml</modification>
 	</install>
-	<uninstall for="2.1 Beta 2">
+	<uninstall for="2.1 Beta 3">
 		<modification reverse="true">install_21x.xml</modification>
 		<modification reverse="true">language_english.xml</modification>
 		<modification reverse="true">language_french_utf8.xml</modification>
