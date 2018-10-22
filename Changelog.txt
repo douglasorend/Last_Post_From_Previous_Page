@@ -1,4 +1,5 @@
 v1.6 - October 19th, 2018
+o Reverted code back to v1.4.
 o No functionality change.
 o Updated documentation to point to new website.
 
