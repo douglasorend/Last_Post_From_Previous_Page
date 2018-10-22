@@ -1,3 +1,6 @@
+v1.3 - April 1st, 2016
+o Fixed remove picture code to properly change multiple IMG tags to URL tags.
+
 v1.2 - March 31th, 2016
 o Added support for SMF 2.0.x's Core template.
 o Added support for SMF 2.1 Beta 2.
